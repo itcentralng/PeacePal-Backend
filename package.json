@@ -1,6 +1,7 @@
 {
   "type": "module",
   "dependencies": {
+    "@jambonz/node-client": "^0.3.55",
     "@jambonz/node-client-ws": "^0.1.18",
     "axios": "^1.5.1",
     "body-parser": "^1.20.2",

@@ -1,11 +1,12 @@
-// const platformAuthRequired = (req, res, next) => {
-//   const platform = req.header("platform");
+const platformAuthRequired = (req, res, next) => {
+  const platform = req.header("jambonz");
 
-//   if (platform !== "jambonz") {
-//     return res.status(401).send("Unauthorized");
-//   }
+  if (platform !== "jambonz") {
+    console.log(platform);
+    return res.status(401).send("Not");
+  }
 
-//   next();
-// };
+  next();
+};
 
-// export default platformAuthRequired;
+export default platformAuthRequired;

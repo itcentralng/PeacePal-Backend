@@ -1,51 +1,32 @@
 import express from "express";
 import bodyParser from "body-parser";
-// import platformAuthRequired from "./platformAuthRequired.js";
-// import authorization from "./authorization.js";
-import axios from "axios";
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
-// app.use(platformAuthRequired);
-
-// const url = "http://localhost:3000/call/initialize";
-// const headers = authorization.getHeaders();
-
-// axios
-//   .post(url, { headers })
-//   .then((response) => {
-//     console.log(response.data);
-//   })
-//   .catch((error) => {
-//     console.log(error.response.status);
-//   });
 
 // Simulated data
-const users = [
-  { id: 1, name: "John Doe", phone: "+2348162577778" },
-  { id: 2, name: "Alice Smith", phone: "9876543210" },
-];
+const users = [{ id: 1, name: "John Doe", phone: "+12564084013" }];
 
 const partners = [
-  { id: 1, name: "Partner A", assignedPhone: "1111111111" },
-  { id: 2, name: "Partner B", assignedPhone: "2222222222" },
+  { id: 1, name: "Mubarak", assignedPhone: "+2348162577778" },
+  { id: 2, name: "mubarak", assignedPhone: "mubarak" },
 ];
 
 const calls = [];
 
-function getCallByUserIdAndSessionId(userId, sessionId) {
-  return calls.find(
-    (call) => call.userId === userId && call.sessionId === sessionId
-  );
-}
+// function getCallByUserIdAndSessionId(userId, sessionId) {
+//   return calls.find(
+//     (call) => call.userId === userId && call.sessionId === sessionId
+//   );
+// }
 
 // Simulated qa_chain function
-function qa_chain(transcript, history, partnerName) {
-  // Simulated QA logic, replace with your actual implementation
-  return `Simulated answer for "${transcript}" with history: ${history} from ${partnerName}`;
-}
+// function qa_chain(transcript, history, partnerName) {
+//   // Simulated QA logic, replace with your actual implementation
+//   return `Simulated answer for "${transcript}" with history: ${history} from ${partnerName}`;
+// }
 
 // const platformAuthRequired = (req, res, next) => {
 //   const platform = req.header("platform");
@@ -65,7 +46,8 @@ app.post("/call/initialize", (req, res) => {
       return res.json([
         {
           verb: "say",
-          text: "Please call from a registered phone number!",
+          text: "Hello, this is peace pal. Our call feature is currently under development, but we will make sure we let you know when our call feature becomes available to users! Thank you. ",
+          // text: audio.play(),
         },
       ]);
     }
